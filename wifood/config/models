@@ -14,4 +14,22 @@ Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived
     deriving Eq
     deriving Show
 
- -- By default this file is used in Model.hs (which is imported by Foundation.hs)
+Table
+    deriving Typeable
+    deriving Eq
+    deriving Show
+
+Item
+    name Text
+    description Text
+    UniqueName name
+    deriving Typeable
+    deriving Eq
+    deriving Show
+
+Order
+    tableId TableId
+    itemId ItemId
+    deriving Typeable
+    deriving Eq
+    deriving Show
