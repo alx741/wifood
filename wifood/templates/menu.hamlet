@@ -22,3 +22,6 @@
     <div .row>
         <div .col-xs-12>
             <h1>#{show menu}
+            <ul>
+                $forall (Entity menuItemId menuItem) <- menuItems
+                    <li>#{itemName menuItem}

@@ -30,8 +30,20 @@ postTableR = error "Not yet implemented: postTableR"
 
 getPopulateR :: Handler Text
 getPopulateR = do
+    -- Clear existing tables, menu items and orders
+    runDB $ deleteWhere ([] :: [Filter Table])
+    runDB $ deleteWhere ([] :: [Filter Item])
+    runDB $ deleteWhere ([] :: [Filter Order])
+
+    -- Populate
     runDB $ forM tables insert
+    runDB $ forM items insert
     return "Populated"
+
     where
         tables :: [Table]
         tables = replicate 10 Table
+
+        items :: [Item]
+        items =
+            [ Item "Churrasco" "Carne de res, arroz, porción de papas, huevo frito y ensalada." 4.0 Main]
