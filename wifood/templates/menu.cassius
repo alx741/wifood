@@ -1,0 +1,5 @@
+.navbar-brand
+    padding: 5px;
+#nav-logo
+    margin-left: 50px;
+    max-width: 50px;
