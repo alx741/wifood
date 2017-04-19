@@ -6,6 +6,10 @@
 
 / HomeR GET POST
 
+/mesa/#TableId TableR GET POST
+
+/populate PopulateR GET
+
 /comments CommentR POST
 
 /profile ProfileR GET
