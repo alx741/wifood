@@ -22,6 +22,7 @@ Table
 Item
     name Text
     description Text
+    price Double
     itemKind ItemKind
     UniqueName name
     deriving Typeable
