@@ -25,6 +25,7 @@ library
                      Handler.Comment
                      Handler.Profile
                      Handler.Table
+                     ItemKind
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT

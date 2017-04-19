@@ -1,8 +1,7 @@
 module Handler.Table where
 
 import Import
-
-data Menu = Main | Dessert | Drink deriving Show
+import ItemKind
 
 getTableR :: TableId -> Handler Html
 getTableR tableId = do
@@ -14,10 +13,15 @@ getTableR tableId = do
             Just "bebidas" -> Drink
             Just _ -> Main
 
+    menuItems <- loadMenuItems menu
     table <- runDB $ get tableId
     defaultLayout $ do
         setTitle $ toHtml $ "Mesa " ++ show tableId
         $(widgetFile "menu")
+
+    where
+        loadMenuItems kind = do
+            runDB $ selectList [ItemItemKind ==. kind] []
 
 
 postTableR :: TableId -> Handler Html

@@ -22,6 +22,7 @@ Table
 Item
     name Text
     description Text
+    itemKind ItemKind
     UniqueName name
     deriving Typeable
     deriving Eq
