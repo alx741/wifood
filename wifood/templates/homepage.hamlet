@@ -2,7 +2,7 @@
     <div .row>
         <div .col-md-3>
             <div #logo_container>
-                <img #logo src=@{StaticR img_logo_png}>
+                <img #logo src=@{StaticR img_gif_gif}>
 
     <div #instructions>
         <p>
