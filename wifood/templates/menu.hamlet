@@ -11,10 +11,28 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-            <a href="#">Link
-        <li>
-            <a href="#">Link
+        $case menu
+            $of Main
+                <li class="active">
+                    <a href="@{TableR tableId}?menu=principales">Platos Principales
+                <li>
+                    <a href="@{TableR tableId}?menu=postres">Postres
+                <li>
+                    <a href="@{TableR tableId}?menu=bebidas">Bebidas
+            $of Dessert
+                <li>
+                    <a href="@{TableR tableId}?menu=principales">Platos Principales
+                <li class="active">
+                    <a href="@{TableR tableId}?menu=postres">Postres
+                <li>
+                    <a href="@{TableR tableId}?menu=bebidas">Bebidas
+            $of Drink
+                <li>
+                    <a href="@{TableR tableId}?menu=principales">Platos Principales
+                <li>
+                    <a href="@{TableR tableId}?menu=postres">Postres
+                <li class="active">
+                    <a href="@{TableR tableId}?menu=bebidas">Bebidas
 
 
 
