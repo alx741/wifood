@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img alt="Wi-Food" #nav-logo src=@{StaticR img_logo_png}>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,3 +50,8 @@
                                 <span .price>$#{itemPrice menuItem}
                             <div .menu-item-desc>#{itemDescription menuItem}
                             <a .btn .btn-default href='#'>Ordenar
+
+
+<footer>
+    Por
+    <a target="_blank" href="http://www.sillybytes.net">alx741
