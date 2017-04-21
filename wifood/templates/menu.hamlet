@@ -37,9 +37,9 @@
 
 
 <div .container-fluid>
-    <div .row>
-        <div .col-xs-12>
-            <h1>#{show menu}
-            <ul>
-                $forall (Entity menuItemId menuItem) <- menuItems
-                    <li>#{itemName menuItem}
+    $forall (Entity menuItemId menuItem) <- menuItems
+        <div .row>
+            <div .menu-item .col-md-offset-1 .col-md-10>
+                <img .menu-item-pic>
+                <div .menu-item-name>#{itemName menuItem}
+                <div .menu-item-desc>#{itemDescription menuItem}
