@@ -24,8 +24,9 @@
     #instructions
         position: absolute;
         bottom: 20px;
-        right: 20px;
-        text-align: right;
+        width: 90%
+        text-shadow: 2px black;
+        text-align: center;
         font-family: serif;
         font-size: 2.5em;
         font-weight: bold;
