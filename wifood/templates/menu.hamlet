@@ -37,13 +37,13 @@
 
 
 <div .container-fluid>
-    $forall (Entity menuItemId menuItem) <- menuItems
+    $forall item@(Entity _ menuItem) <- menuItems
         <div .row>
             <div .menu-item-container .col-sm-offset-1 .col-sm-10>
                 <div .menu-item>
                     <div .row>
                         <div .col-sm-4>
-                            <img src="@{StaticR img_logo_png}" .img-responsive .menu-item-pic>
+                            <img src="#{itemPic item} " .img-responsive .menu-item-pic>
                         <div .col-sm-8>
                             <div .menu-item-name>
                                 #{itemName menuItem}

@@ -1,7 +1,32 @@
 module Handler.Table where
 
-import Import
+import Import hiding (map, toLower)
+import Data.Text (strip, map, toLower, append)
 import ItemKind
+
+normalizeItem :: Entity Item -> Text
+normalizeItem (Entity _ item) =
+    pack $ fmap (removeAccents.removeSpace) $ (unpack.toLower.strip) (itemName item)
+    where
+        removeSpace = \x -> case x of
+                ' ' -> '_'
+                _   -> x
+        removeAccents = \x -> case x of
+                'á' -> 'a'
+                'é' -> 'e'
+                'í' -> 'i'
+                'ó' -> 'o'
+                'ú' -> 'u'
+                'ü' -> 'u'
+                'ñ' -> 'n'
+                _   -> x
+
+
+itemPic :: Entity Item -> Text
+itemPic item = append (append path (normalizeItem item)) ".jpg"
+    where
+        path = "/static/img/items/"
+
 
 getTableR :: TableId -> Handler Html
 getTableR tableId = do
@@ -102,7 +127,7 @@ getPopulateR = do
                 5.00 Main
 
             , Item
-                "Porción  tres leches"
+                "Porción tres leches"
                 "Porción bañado en tres leches con aderezos."
                 3.50 Dessert
 
