@@ -50,11 +50,11 @@ getTableR tableId = do
             runDB $ selectList [ItemItemKind ==. kind] []
 
 
-getOrderR :: TableId -> ItemId -> Handler Text
+getOrderR :: TableId -> ItemId -> Handler Html
 getOrderR tableId itemId = do
     currTime <- liftIO getCurrentTime
     runDB $ insert $ Order tableId itemId currTime
-    return "placed"
+    defaultLayout $(widgetFile "orderPlaced")
 
 
 getPopulateR :: Handler Text

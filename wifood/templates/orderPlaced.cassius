@@ -1,0 +1,9 @@
+#ordered
+    margin-top: 80px;
+    text-align: center;
+    img
+        max-width: 150px;
+        display: block;
+        margin: 30px auto;
+    a
+        font-size: 1.5em;

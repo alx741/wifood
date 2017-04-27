@@ -1,0 +1,6 @@
+<div .container-fluid>
+    <div .row #ordered>
+        <div .col-md-offset-2 .col-md-8>
+            <h1>Ordenado
+            <img src=@{StaticR img_check_png}>
+            <a .btn .btn-success href=@{TableR tableId}>Cotinuar ordenando
