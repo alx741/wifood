@@ -53,5 +53,7 @@
 
 
 <footer>
-    Por
+    Made with
+    <img #heart src=@{StaticR img_heart_png}>
+    by
     <a target="_blank" href="http://www.sillybytes.net">alx741
