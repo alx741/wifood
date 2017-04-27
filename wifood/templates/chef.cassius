@@ -1,0 +1,5 @@
+.order
+    border-radius: 20px;
+    border: 1px solid gray;
+    padding: 20px;
+    box-shadow: 2px 2px 3px gray;

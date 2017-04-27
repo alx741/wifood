@@ -18,17 +18,19 @@
 
 <div .container-fluid>
     $forall (tableNum, itemName, orderDate) <- orders
-        <div .row .order>
-            <div .col-md-offset-1 .col-md-10>
-                <h1>Pedido: #{itemName}
-                <h2>Mesa: #{show tableNum}
-                <h3>Fecha: #{show orderDate}
+        <div .row>
+            <div .col-md-offset-1 .col-md-10 .order-container>
+                <div .row .order>
+                    <div .col-md-12>
+                        <h1>Pedido: #{itemName}
+                        <h2>Mesa: #{show tableNum}
+                        <!-- <h3>Fecha: #{show orderDate} -->
+                        <a .btn .btn-info>Entregado
 
 
 
-    <footer>
-        Made with
-        <img #heart src=@{StaticR img_heart_png}>
-        by
-        <a target="_blank" href="http://www.sillybytes.net">alx741
-
+<footer>
+    Made with
+    <img #heart src=@{StaticR img_heart_png}>
+    by
+    <a target="_blank" href="http://www.sillybytes.net">alx741
