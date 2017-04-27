@@ -50,8 +50,8 @@ getTableR tableId = do
             runDB $ selectList [ItemItemKind ==. kind] []
 
 
-postOrderR :: TableId -> ItemId -> Handler Text
-postOrderR tableId itemId = do
+getOrderR :: TableId -> ItemId -> Handler Text
+getOrderR tableId itemId = do
     currTime <- liftIO getCurrentTime
     runDB $ insert $ Order tableId itemId currTime
     return "placed"

@@ -37,7 +37,7 @@
 
 
 <div .container-fluid>
-    $forall item@(Entity _ menuItem) <- menuItems
+    $forall item@(Entity itemId menuItem) <- menuItems
         <div .row>
             <div .menu-item-container .col-sm-offset-1 .col-sm-10>
                 <div .menu-item>
@@ -49,7 +49,7 @@
                                 #{itemName menuItem}
                                 <span .price>$#{itemPrice menuItem}
                             <div .menu-item-desc>#{itemDescription menuItem}
-                            <a .btn .btn-default href='#'>Ordenar
+                            <a .btn .btn-default href=@{OrderR tableId itemId}>Ordenar
 
 
 <footer>
