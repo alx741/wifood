@@ -17,15 +17,22 @@
 
 
 <div .container-fluid>
-    $forall (tableNum, itemName, orderDate) <- orders
+    $if null orders
         <div .row>
             <div .col-md-offset-1 .col-md-10 .order-container>
                 <div .row .order>
                     <div .col-md-12>
-                        <h1>Pedido: #{itemName}
-                        <h2>Mesa: #{show tableNum}
-                        <!-- <h3>Fecha: #{show orderDate} -->
-                        <a .btn .btn-info>Entregado
+                        <h1>No hay ningun pedido aún
+    $else
+        $forall (orderId, tableNum, itemName, orderDate) <- orders
+            <div .row>
+                <div .col-md-offset-1 .col-md-10 .order-container>
+                    <div .row .order>
+                        <div .col-md-12>
+                            <h1>Pedido: #{itemName}
+                            <h2>Mesa: #{show tableNum}
+                            <!-- <h3>Fecha: #{show orderDate} -->
+                            <a .btn .btn-info href=@{DeliveredR orderId}>Entregado
 
 
 

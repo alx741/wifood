@@ -9,6 +9,7 @@
 /mesa/#TableId TableR GET
 /orden/#TableId/#ItemId OrderR GET
 /chef ChefR GET
+/chef/delivered/#OrderId DeliveredR GET
 
 /populate PopulateR GET
 

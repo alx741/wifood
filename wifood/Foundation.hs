@@ -143,6 +143,7 @@ instance Yesod App where
     isAuthorized (TableR _) _ = return Authorized
     isAuthorized (OrderR _ _) _ = return Authorized
     isAuthorized ChefR _ = return Authorized
+    isAuthorized (DeliveredR _)  _ = return Authorized
     isAuthorized PopulateR _ = return Authorized
 
     isAuthorized ProfileR _ = isAuthenticated

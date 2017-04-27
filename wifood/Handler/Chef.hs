@@ -9,8 +9,13 @@ getChefR = do
     orders <- forM orders' getOrder
     defaultLayout $(widgetFile "chef")
 
+getDeliveredR :: OrderId -> Handler Html
+getDeliveredR orderId = do
+    runDB $ delete orderId
+    redirect ChefR
 
-getOrder (Entity _ order) = do
+
+getOrder (Entity orderId order) = do
     table <- runDB $ get404 $ orderTableId order
     item <- runDB $ get404 $ orderItemId order
-    return $ (tableNumber table, itemName item, orderCreatedAt order)
+    return $ (orderId, tableNumber table, itemName item, orderCreatedAt order)
