@@ -6,7 +6,9 @@
 
 / HomeR GET POST
 
-/mesa/#TableId TableR GET POST
+/mesa/#TableId TableR GET
+/orden/#TableId/#ItemId OrderR POST
+/chef ChefR GET
 
 /populate PopulateR GET
 

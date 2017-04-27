@@ -2,6 +2,7 @@ module Handler.Table where
 
 import Import hiding (map, toLower)
 import Data.Text (strip, map, toLower, append)
+import Data.Time
 import ItemKind
 
 normalizeItem :: Entity Item -> Text
@@ -49,8 +50,11 @@ getTableR tableId = do
             runDB $ selectList [ItemItemKind ==. kind] []
 
 
-postTableR :: TableId -> Handler Html
-postTableR = error "Not yet implemented: postTableR"
+postOrderR :: TableId -> ItemId -> Handler Text
+postOrderR tableId itemId = do
+    currTime <- liftIO getCurrentTime
+    runDB $ insert $ Order tableId itemId currTime
+    return "placed"
 
 
 getPopulateR :: Handler Text
@@ -67,7 +71,7 @@ getPopulateR = do
 
     where
         tables :: [Table]
-        tables = replicate 10 Table
+        tables = [Table x | x <- [1..10]]
 
         items :: [Item]
         items =
